@@ -1,17 +1,26 @@
-import React from 'react'
-import Dashboard from './pages/dashboard'
+import { useState } from "react";
+import MapView from "./components/MapView";
+import SearchBar from "./components/SearchBar";
 
-import Home from './pages/Home'
-import StationCard from './components/StationCard'
-import About from './pages/About'
+export default function App() {
+  const [selected, setSelected] = useState(null);
 
-function App() {
   return (
-    <div>
-      <Home />
-    <About/>
-    </div>
-  )
-}
+    <div className="h-screen flex flex-col">
+      
+      {/* top (search) */}
+      <div className="p-4 bg-white shadow">
+        <SearchBar onSelect={(place) => setSelected(place)} />
+      </div>
 
-export default App
+      {/* map area */}
+      <div className="flex-1">
+        <MapView
+          selected={selected}
+          onPick={(place) => setSelected(place)}
+        />
+      </div>
+
+    </div>
+  );
+}
