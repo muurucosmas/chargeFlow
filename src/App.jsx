@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import Dashboard from "./pages/dashboard";
-import Login from "./component/Login";
-import Profile from "./component/Profile";
-=======
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -13,39 +8,30 @@ import MapView from "./components/MapView";
 import SearchBar from "./components/SearchBar";
 import Sidebar from "./components/sidebar";
 
->>>>>>> dev
 export default function App() {
-
+  const [selected, setSelected] = useState(null);
 
   return (
-<<<<<<< HEAD
-    <div>
-      
-   
-
-    <Profile />
-=======
     <BrowserRouter>
-    <div className="h-screen flex flex-col">
+      <div className="h-screen flex flex-col">
 
-      <div className='flex flex-col gap-1'>
-        
-        <div className=''>
-          
-          <Routes>
-            <Route path="/" element={<Dashboard />}/>
-            <Route path='/findcharger' element={ 
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+
+          <Route
+            path="/findcharger"
+            element={
               <>
                 <div className="flex justify-center p-4">
-                  <Sidebar/>
+                  <Sidebar />
                 </div>
-                {/* top (search) */}
+
+                {/* search */}
                 <div className="p-4 bg-white shadow">
                   <SearchBar onSelect={(place) => setSelected(place)} />
                 </div>
->>>>>>> dev
 
-                {/* map area */}
+                {/* map */}
                 <div className="flex-1 h-screen">
                   <MapView
                     selected={selected}
@@ -53,17 +39,13 @@ export default function App() {
                   />
                 </div>
               </>
-              
             }
-            />
-            <Route path='/about' element={<About />}/>
-            {/* <Route path='/profile' element={<Profile/>}/> */}
-          </Routes>
-        </div>
-        
+          />
+
+          <Route path="/about" element={<About />} />
+        </Routes>
+
       </div>
-    </div>
-      
     </BrowserRouter>
   );
 }
