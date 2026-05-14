@@ -10,6 +10,7 @@ function Dashboard() {
             {/* navigation mockup */}
             <nav className='flex gap-4 cursor-pointer'>
                 <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Home</a>
+                <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Find Chargers</a>
                 <a href="/profile" className='text-xl font-semibold hover:text-green-600 hover:underline'>Profile</a>
                 <a href="/about" className='text-xl font-semibold hover:text-green-600 hover:underline'>About Us</a>
             </nav> 
@@ -69,7 +70,7 @@ function Dashboard() {
         </section>       
 
         {/*why choose chargeflow  */}
-        <div className='my-6 flex justify-center align-center gap-1 font-bold pt-3'>
+        <div className='my-8 flex justify-center align-center gap-1 font-bold pt-3'>
             <div className='h-px flex-1 bg-gray-400 '></div>
             <h3 className='text-3xl'>Why Choose Chargeflow?</h3>
             <div className='h-px flex-1 bg-gray-400'></div>
