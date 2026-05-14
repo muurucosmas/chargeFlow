@@ -1,16 +1,69 @@
+<<<<<<< HEAD
 import Dashboard from "./pages/dashboard";
 import Login from "./component/Login";
 import Profile from "./component/Profile";
+=======
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import About from "./pages/About";
+import Dashboard from "./pages/dashboard";
+
+import MapView from "./components/MapView";
+import SearchBar from "./components/SearchBar";
+import Sidebar from "./components/sidebar";
+
+>>>>>>> dev
 export default function App() {
 
 
   return (
+<<<<<<< HEAD
     <div>
       
    
 
     <Profile />
+=======
+    <BrowserRouter>
+    <div className="h-screen flex flex-col">
 
+      <div className='flex flex-col gap-1'>
+        
+        <div className=''>
+          
+          <Routes>
+            <Route path="/" element={<Dashboard />}/>
+            <Route path='/findcharger' element={ 
+              <>
+                <div className="flex justify-center p-4">
+                  <Sidebar/>
+                </div>
+                {/* top (search) */}
+                <div className="p-4 bg-white shadow">
+                  <SearchBar onSelect={(place) => setSelected(place)} />
+                </div>
+>>>>>>> dev
+
+                {/* map area */}
+                <div className="flex-1 h-screen">
+                  <MapView
+                    selected={selected}
+                    onPick={(place) => setSelected(place)}
+                  />
+                </div>
+              </>
+              
+            }
+            />
+            <Route path='/about' element={<About />}/>
+            {/* <Route path='/profile' element={<Profile/>}/> */}
+          </Routes>
+        </div>
+        
+      </div>
     </div>
+      
+    </BrowserRouter>
   );
 }

@@ -1,11 +1,17 @@
 import React from "react";
+import { Outlet } from 'react-router-dom';
+import Sidebar from "../components/sidebar";
 
 function About() {
   return (
     <div className="max-w-3xl mx-auto p-6">
+      <div className="flex justify-center p-4">
+        <Sidebar/>
+      </div>
 
+      
       {/* Title */}
-      <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
+      <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-8 bg-green-500 p-3">
         ⚡ About ChargeFlow
       </h1>
 

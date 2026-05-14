@@ -1,24 +1,21 @@
 import React from 'react'
 import { EvCharger, Rabbit, Sprout, MapPinSearch, User, Activity, Search, Save } from 'lucide-react';
+import Sidebar from '../components/sidebar';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
   return (
     // icon and dummy navbar
-    <div className='m-6'>
+    <div className='m-6 max-w-375'>
         <div className='flex max-w-[7xl] items-center justify-between'>
-            <img className="w-40" src="src/Assests/ChargeFlow.png" alt="chargeflow" />
-            {/* navigation mockup */}
-            <nav className='flex gap-4 cursor-pointer'>
-                <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Home</a>
-                <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Find Chargers</a>
-                <a href="/profile" className='text-xl font-semibold hover:text-green-600 hover:underline'>Profile</a>
-                <a href="/about" className='text-xl font-semibold hover:text-green-600 hover:underline'>About Us</a>
-            </nav> 
-            <button 
-                className='bg-green-500 text-white h-10 w-20 rounded-xl shadow-lg cursor-pointer hover:bg-green-700'
+            <img className="w-45" src="src/Assests/ChargeFlow.png" alt="chargeflow" />
+            <Sidebar />
+            <Link 
+                to="/profile"
+                className="bg-green-500 p-2 text-lg font-bold text-white rounded-xl shadow-lg cursor-pointer hover:bg-green-700"
             >
                 Sign Up
-            </button>           
+            </Link>           
         </div>
 
         <section>
@@ -30,9 +27,14 @@ function Dashboard() {
 
             <div className='flex flex-col mt-2'>
                     {/* Navigation to map */}
-                <nav >
-                    <a href="#map" className='bg-green-500 p-2 text-white rounded-xl font-medium'>Find Charging Station</a>
-                </nav>
+                <div >
+                    <Link 
+                        to="/findcharger" 
+                        className='bg-green-500 p-2 text-white rounded-xl font-bold cursor-pointer hover:bg-green-700'
+                    >
+                        Find Charging Station
+                    </Link>
+                </div>
 
                 {/* statistics */}
                 <div className='flex gap-30 items-center'>
