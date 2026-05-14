@@ -70,7 +70,7 @@ function Dashboard() {
         </section>       
 
         {/*why choose chargeflow  */}
-        <div className='my-6 flex justify-center align-center gap-1 font-bold pt-3'>
+        <div className='my-8 flex justify-center align-center gap-1 font-bold pt-3'>
             <div className='h-px flex-1 bg-gray-400 '></div>
             <h3 className='text-3xl'>Why Choose Chargeflow?</h3>
             <div className='h-px flex-1 bg-gray-400'></div>
