@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div className='flex flex-col border w-40'>
+    <div className='flex gap-5 font-semibold text-lg'>
         <NavLink 
             to="/"
             className={({isActive}) => isActive 
@@ -14,12 +14,21 @@ function Sidebar() {
             Home
         </NavLink>
         <NavLink 
+            to="/findcharger"
+            className={({isActive}) => isActive 
+            ? "text-green-500 font-bold"
+            : "text-gray-600"
+            }
+        >
+            Find Chargers
+        </NavLink>
+        <NavLink 
             to="/about"
             className={({isActive}) => isActive 
             ? "text-green-500 font-bold"
             : "text-gray-600"
             }
-            >About</NavLink>
+        >About Us</NavLink>
         <NavLink 
             to="/profile"
             className={({isActive}) => isActive 
