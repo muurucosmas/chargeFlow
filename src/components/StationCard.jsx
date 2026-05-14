@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function StationCard({station,onClick}) {
+export default function StationCard({station}) {
   return (
-    <div onClick={onClick} className="flex">
+    <div className="flex">
       <h3 className="font-extrabold">{station.name}</h3>
    <p className=" font-bold ">{station.location}</p>
   <p className="">{station.type}</p>
