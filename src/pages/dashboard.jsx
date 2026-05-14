@@ -10,6 +10,7 @@ function Dashboard() {
             {/* navigation mockup */}
             <nav className='flex gap-4 cursor-pointer'>
                 <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Home</a>
+                <a href="/home" className='text-xl font-semibold hover:text-green-600 hover:underline'>Find Chargers</a>
                 <a href="/profile" className='text-xl font-semibold hover:text-green-600 hover:underline'>Profile</a>
                 <a href="/about" className='text-xl font-semibold hover:text-green-600 hover:underline'>About Us</a>
             </nav> 
