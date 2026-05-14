@@ -1,7 +1,6 @@
 import React from 'react'
 import Dashboard from './pages/dashboard'
 
-function App() {
   return (
     <div>
       <Dashboard/>
@@ -9,4 +8,14 @@ function App() {
   )
 }
 
-export default App
+      <div className="content">
+        <div className="mapPanel">
+          <MapView
+            selected={selected}
+            onPick={(place) => setSelected(place)}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
