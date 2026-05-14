@@ -6,8 +6,9 @@ function ChangeView({ center }) {
 
   useEffect(() => {
     if (center) {
-      map.setView(center, map.getZoom(), {
-        animate: true, // smooth movement 🔥
+      map.flyTo(center, 15, {
+        animate: true,
+        duration: 1.5,
       });
     }
   }, [center, map]);

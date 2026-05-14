@@ -1,24 +1,37 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import ChangeView from "./ChangeView";
-function Map({ stations,center }) {
- 
+function Map({ stations, center, selectedStation,setSelectedStation }) {
+    const activeCenter = selectedStation ? selectedStation.coords : center;
+
   return (
-    <MapContainer center={center} zoom={13} style={{ height: "400px", width: "100%" }}>
-       
-         <ChangeView center={center} />
+    <MapContainer
+      center={activeCenter}
+      zoom={13}
+      style={{ height: "100%", width: "100%" }}
+    >
+      <ChangeView center={selectedStation ? selectedStation.coords : activeCenter} />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
       {stations.map((s) => (
-        <Marker key={s.id} position={s.coords}>
+        <Marker
+          key={s.id}
+          position={s.coords}
+          opacity={selectedStation && selectedStation.id !== s.id ? 0.5 : 1}
+        eventHandlers={{
+            click: () => setSelectedStation(s),
+          }}
+        >
           <Popup>
-            <strong>{s.name}</strong>
-            <br />
-            {s.location}
+            <div>
+              <h3>⚡ {s.name}</h3>
+              <p>{s.location}</p>
+              <p>{s.type}</p>
+              <p>{s.price}</p>
+            </div>
           </Popup>
         </Marker>
       ))}
-
     </MapContainer>
   );
 }
