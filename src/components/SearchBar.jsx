@@ -9,7 +9,7 @@ export default function SearchBar({ onSelect }) {
   async function runSearch() {
     setLoading(true);
     try {
-      const r = await searchPlace(q);
+      let r = await searchPlace(q);
       setResults(r);
       if (r.length === 1) onSelect(r[0]);
     } catch (e) {

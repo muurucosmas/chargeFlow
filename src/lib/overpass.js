@@ -1,5 +1,5 @@
 export async function getChargingStations(lat, lon) {
-  const query = `
+  let query = `
     [out:json];
     node["amenity"="charging_station"](around:500, ${lat}, ${lon});
     out;

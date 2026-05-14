@@ -24,7 +24,7 @@ export default function MapView({ center, selected, onPick }) {
     if (!selected) return;
 
     async function loadStations() {
-      const data = await getChargingStations(selected.lat, selected.lon);
+      let data = await getChargingStations(selected.lat, selected.lon);
       setStations(data);
     }
 
