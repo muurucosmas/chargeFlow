@@ -1,4 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import "leaflet-routing-machine";
+import L from "leaflet";
+import { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import ChangeView from "./ChangeView";
 function Map({ stations, center, selectedStation,setSelectedStation }) {
@@ -8,7 +12,7 @@ function Map({ stations, center, selectedStation,setSelectedStation }) {
     <MapContainer
       center={activeCenter}
       zoom={13}
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "400px", width: "100%" }}
     >
       <ChangeView center={selectedStation ? selectedStation.coords : activeCenter} />
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -22,6 +26,7 @@ function Map({ stations, center, selectedStation,setSelectedStation }) {
             click: () => setSelectedStation(s),
           }}
         >
+          
           <Popup>
             <div>
               <h3>⚡ {s.name}</h3>
@@ -32,6 +37,7 @@ function Map({ stations, center, selectedStation,setSelectedStation }) {
           </Popup>
         </Marker>
       ))}
+       
     </MapContainer>
   );
 }
