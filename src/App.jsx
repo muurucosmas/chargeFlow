@@ -6,17 +6,21 @@ export default function App() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="app">
-      <SearchBar onSelect={(place) => setSelected(place)} />
-
-      <div className="content">
-        <div className="mapPanel">
-          <MapView
-            selected={selected}
-            onPick={(place) => setSelected(place)}
-          />
-        </div>
+    <div className="h-screen flex flex-col">
+      
+      {/* top (search) */}
+      <div className="p-4 bg-white shadow">
+        <SearchBar onSelect={(place) => setSelected(place)} />
       </div>
+
+      {/* map area */}
+      <div className="flex-1">
+        <MapView
+          selected={selected}
+          onPick={(place) => setSelected(place)}
+        />
+      </div>
+
     </div>
   );
 }
