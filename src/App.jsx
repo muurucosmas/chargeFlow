@@ -13,25 +13,25 @@ export default function App() {
 
   return (
     <BrowserRouter>
-    <div className="h-screen flex flex-col">
+      <div className="h-screen flex flex-col">
 
-      <div className='flex flex-col gap-1'>
-        
-        <div className=''>
-          
-          <Routes>
-            <Route path="/" element={<Dashboard />}/>
-            <Route path='/findcharger' element={ 
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+
+          <Route
+            path="/findcharger"
+            element={
               <>
                 <div className="flex justify-center p-4">
-                  <Sidebar/>
+                  <Sidebar />
                 </div>
-                {/* top (search) */}
+
+                {/* search */}
                 <div className="p-4 bg-white shadow">
                   <SearchBar onSelect={(place) => setSelected(place)} />
                 </div>
 
-                {/* map area */}
+                {/* map */}
                 <div className="flex-1 h-screen">
                   <MapView
                     selected={selected}
@@ -39,17 +39,13 @@ export default function App() {
                   />
                 </div>
               </>
-              
             }
-            />
-            <Route path='/about' element={<About />}/>
-            {/* <Route path='/profile' element={<Profile/>}/> */}
-          </Routes>
-        </div>
-        
+          />
+
+          <Route path="/about" element={<About />} />
+        </Routes>
+
       </div>
-    </div>
-      
     </BrowserRouter>
   );
 }
