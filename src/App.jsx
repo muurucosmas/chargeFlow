@@ -1,9 +1,22 @@
-import React from 'react'
+import { useState } from "react";
+import MapView from "./components/MapView";
+import SearchBar from "./components/SearchBar";
 
-function App() {
+export default function App() {
+  const [selected, setSelected] = useState(null);
+
   return (
-    <div>App</div>
-  )
-}
+    <div className="app">
+      <SearchBar onSelect={(place) => setSelected(place)} />
 
-export default App
+      <div className="content">
+        <div className="mapPanel">
+          <MapView
+            selected={selected}
+            onPick={(place) => setSelected(place)}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
