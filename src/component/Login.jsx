@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Sidebar from '../components/sidebar'
 
 function Login({ addData }) {
   const [loginForm, setLoginForm] = useState({
@@ -41,7 +42,7 @@ function Login({ addData }) {
   }
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="m-6 flex justify-center items-center">
 
       <form
         onSubmit={handleSubmit}
@@ -81,7 +82,7 @@ function Login({ addData }) {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
+          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-700 transition"
         >
           Submit
         </button>

@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Dashboard from "./pages/dashboard";
 
-import MapView from "./components/MapView";
-import SearchBar from "./components/SearchBar";
+import MapView from "./component/MapView";
+import SearchBar from "./component/SearchBar";
 import Sidebar from "./components/sidebar";
+import Profile from "./component/Profile";
 
 export default function App() {
   const [selected, setSelected] = useState(null);
@@ -41,6 +42,7 @@ export default function App() {
               </>
             }
           />
+          <Route path="/profile" element={<Profile />}/>
 
           <Route path="/about" element={<About />} />
         </Routes>

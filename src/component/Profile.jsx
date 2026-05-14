@@ -21,6 +21,7 @@ function Profile() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
 
+
       <Login addData={handleLogin} />
 
       <h2 className="text-2xl font-bold mt-10 mb-4 text-center">
