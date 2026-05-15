@@ -30,7 +30,7 @@ function About() {
       {/* Mission */}
       <div className="bg-white shadow-md rounded-xl p-5 border border-gray-100">
         <h2 className="text-xl font-bold text-blue-600 mb-2">
-          🎯 Mission
+          Mission
         </h2>
         <p className="text-gray-600 leading-relaxed">
           To simplify electric vehicle charging by providing a smart, fast,
