@@ -1,6 +1,6 @@
 import React from 'react'
 import { EvCharger, Rabbit, Sprout, MapPinSearch, User, Activity, Search, Save } from 'lucide-react';
-import Sidebar from './component/sidebar';
+import Sidebar from '../component/sidebar';
 import { Link } from 'react-router-dom';
 
 function Dashboard() {

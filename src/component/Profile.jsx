@@ -22,7 +22,7 @@ function Profile() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
 
-      <div className='p-4 bg-white shadow'>
+      <div className='p-4 bg-white shadow flex justify-center'>
         <Sidebar />
       </div>      
 

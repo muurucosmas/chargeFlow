@@ -9,3 +9,6 @@ html, body, #root {
   height: 100%;
   width: 100%;
 }
+@theme {
+  --font-display: "Roboto", sans-serif;
+} 

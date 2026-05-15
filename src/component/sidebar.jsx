@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div className='flex gap-5 font-semibold text-lg'>
+    <div className='flex gap-5 font-semibold text-lg font-display '>
         <NavLink 
             to="/"
             className={({isActive}) => isActive 
