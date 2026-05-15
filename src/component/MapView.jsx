@@ -1,7 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import { useMemo, useEffect, useState } from "react";
 import { getChargingStations } from "../lib/overpass";
-import StationCard from "./StationCard";
 
 function ClickToPin({ onPick }) {
   useMapEvents({
@@ -18,14 +17,13 @@ function ClickToPin({ onPick }) {
 
 export default function MapView({ center, selected, onPick }) {
   const initialCenter = useMemo(() => center ?? [-1.2921, 36.8219], [center]);
-
   const [stations, setStations] = useState([]);
 
   useEffect(() => {
     if (!selected) return;
 
     async function loadStations() {
-      const data = await getChargingStations(selected.lat, selected.lon);
+      let data = await getChargingStations(selected.lat, selected.lon);
       setStations(data);
     }
 
@@ -48,12 +46,7 @@ export default function MapView({ center, selected, onPick }) {
       )}
 
       {stations.map((s, i) => (
-
-        <Marker key={i} position={[s.lat, s.lon]} >
-       <Popup>
-      <StationCard station={s} />
-    </Popup>
-       </Marker> 
+        <Marker key={i} position={[s.lat, s.lon]} />
       ))}
 
     </MapContainer>
