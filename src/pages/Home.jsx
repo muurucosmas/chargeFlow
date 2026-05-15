@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MapView from "./components/MapView";
-import SearchBar from "./components/SearchBar";
+import MapView from "./component/MapView";
+import SearchBar from "./component/SearchBar";
 
 export default function App() {
   const [selected, setSelected] = useState(null);

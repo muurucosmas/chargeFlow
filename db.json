@@ -1,28 +1,28 @@
 {
   "users": [
     {
-      "username": "Faithcloud",
-      "password": "wrjieokdslsmf38wi",
-      "email": "faith.kamande1@student.moringaschool.com",
-      "id": "8G6QUdDJpXM"
-    },
-    {
       "username": "AllanKivuva",
-      "password": "ewijw2p[wa",
+      "password": "gwksam.as wj",
       "email": "Allankivuva@gmail.com",
-      "id": "lRJfdcZx-ds"
+      "id": "FXnh-jmpXmY"
     },
     {
       "username": "Cosmas",
-      "password": "mr3qhiews",
-      "email": "CosmasM@gmail.com",
-      "id": "IPp2HXD968k"
+      "password": "ejwok;z ww",
+      "email": "cosmas-m@student.moringaschool.com",
+      "id": "tsQ-FOYsO4Y"
     },
     {
       "username": "RyanMakori",
-      "password": "lwiewokslasiq",
-      "email": "Ryan@student.moringaschool.com",
-      "id": "YepvizOENq4"
+      "password": " dsjnwl,d",
+      "email": "ryanmakori@student.moringaschool.com",
+      "id": "gO5TeEcZXug"
+    },
+    {
+      "username": "FaithK",
+      "password": "kskqwpo",
+      "email": "faith.kamande1@student.moringaschool.com",
+      "id": "z-jic-skfEs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
