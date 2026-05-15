@@ -10,5 +10,5 @@ html, body, #root {
   width: 100%;
 }
 @theme {
-  --font-display: "Roboto", sans-serif;
+  --font-display: "Roboto Serif", "Roboto", sans-serif;
 } 

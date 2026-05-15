@@ -24,7 +24,7 @@ export default function SearchBar({ onSelect }) {
     <>
       <div className="flex gap-2 items-center">
         <input
-          className="flex-1 px-4 py-2 border rounded outline-none"
+          className="flex-1 px-4 py-2 border rounded outline-none font-display"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search a place (e.g., Westlands Nairobi)"
@@ -33,7 +33,7 @@ export default function SearchBar({ onSelect }) {
           }}
         />
         <button
-          className="px-4 py-2 bg-green-500 text-white rounded"
+          className="px-4 py-2 bg-green-500 text-white rounded font-display"
           onClick={runSearch}
           disabled={loading}
         >
@@ -43,14 +43,14 @@ export default function SearchBar({ onSelect }) {
 
       {results.length > 1 && (
         <div className="p-2 border-b">
-          <div className="text-xs text-gray-500 mb-2">
+          <div className="text-xs text-gray-500 mb-2 font-display">
             Pick a result:
           </div>
           {results.map((r, idx) => (
             <div
               key={idx}
               onClick={() => onSelect(r)}
-              className="p-2 border rounded mb-2 cursor-pointer hover:bg-gray-100"
+              className="p-2 border rounded mb-2 cursor-pointer hover:bg-gray-100 font-display"
             >
               {r.label}
             </div>
