@@ -6,7 +6,7 @@ import Dashboard from "./pages/dashboard";
 
 import MapView from "./component/MapView";
 import SearchBar from "./component/SearchBar";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./component/sidebar";
 import Profile from "./component/Profile";
 
 export default function App() {
