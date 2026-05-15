@@ -9,7 +9,7 @@ function Sidebar() {
             className={({isActive}) => isActive 
             ? "text-green-500 font-bold"
             : "text-gray-600"
-            }
+            }   
         >
             Home
         </NavLink>

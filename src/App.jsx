@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Dashboard from "./pages/dashboard";
 
-import MapView from "./components/MapView";
-import SearchBar from "./components/SearchBar";
-import Sidebar from "./components/sidebar";
+import MapView from "../components/MapView";
+import SearchBar from "../components/SearchBar";
+import Sidebar from "../components/sidebar";
 
 export default function App() {
   const [selected, setSelected] = useState(null);
