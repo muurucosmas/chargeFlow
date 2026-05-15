@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     // icon and dummy navbar
     <div className='m-6 max-w-375'>
-        <div className='flex max-w-[7xl] items-center justify-between'>
+        <div className='flex max-w-[7xl] items-center justify-between p-2 bg-white shadow'>
             <img className="w-45" src="src/Assests/ChargeFlow.png" alt="chargeflow" />
             <Sidebar />
             <Link 

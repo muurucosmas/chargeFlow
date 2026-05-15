@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
 import Sidebar from "../component/sidebar";
+import { Bolt } from "lucide-react"
 
 function About() {
   return (
@@ -11,8 +12,8 @@ function About() {
 
       
       {/* Title */}
-      <h1 className="text-3xl font-extrabold text-center text-gray-200 mb-8 bg-green-500 p-3">
-        ⚡ About ChargeFlow
+      <h1 className="flex justify-center gap-4 text-3xl font-extrabold text-center text-gray-200 mb-8 bg-green-500 p-3">
+        <Bolt size={40} className="text-amber-500"/> About ChargeFlow
       </h1>
 
       {/* Vision */}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login'
+import Sidebar from './sidebar'
 
 function Profile() {
   const [profile, setProfile] = useState([])
@@ -20,6 +21,10 @@ function Profile() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
+
+      <div className='p-4 bg-white shadow'>
+        <Sidebar />
+      </div>      
 
 
       <Login addData={handleLogin} />

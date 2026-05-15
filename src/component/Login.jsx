@@ -60,6 +60,7 @@ function Login({ addData }) {
           onChange={handleChange}
           placeholder="Username"
           className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+          required
         />
 
         <input
@@ -69,7 +70,7 @@ function Login({ addData }) {
           onChange={handleChange}
           placeholder="Password"
           className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
-        />
+        required />
 
         <input
           type="email"
@@ -78,7 +79,7 @@ function Login({ addData }) {
           onChange={handleChange}
           placeholder="Email"
           className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
-        />
+        required />
 
         <button
           type="submit"
