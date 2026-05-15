@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login'
 import Sidebar from './sidebar'
+import { User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   const [profile, setProfile] = useState([])
@@ -33,17 +35,30 @@ function Profile() {
    USER PROFILE
       </h2>
 
-      <div className="flex justify-">
+      <div className="flex justify-center gap-4">
         {profile.map(user => (
           <div
             key={user.id}
             className="bg-white p-5 rounded-xl shadow-md border hover:shadow-lg transition"
           >
-            <p className="text-lg font-bold text-gray-800">
-              Hello {user.username}
-            </p>
+            <div className='flex flex-col justify-center gap-2 items-center p-3'>
+              <p className="text-lg font-bold text-gray-800  ">
+                <User size={50} className='text-green-600 m-4 shadow-lg'/> {user.username}
+        
+              </p>
+               <p className="text-gray-500">{user.email}</p>
 
-            <p className="text-gray-500">{user.email}</p>
+              <Link 
+                to="/findcharger" 
+                className='bg-green-500 p-2 text-white rounded-xl font-bold cursor-pointer hover:bg-green-700 w-50'
+              >
+                Find Charging Station
+              </Link>
+
+            </div>
+           
+
+           
           </div>
         ))}
       </div>
