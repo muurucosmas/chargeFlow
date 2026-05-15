@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
-import Sidebar from "../components/sidebar";
+import Sidebar from "../component/sidebar";
 
 function About() {
   return (
@@ -11,7 +11,7 @@ function About() {
 
       
       {/* Title */}
-      <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-8 bg-green-500 p-3">
+      <h1 className="text-3xl font-extrabold text-center text-gray-200 mb-8 bg-green-500 p-3">
         ⚡ About ChargeFlow
       </h1>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Sidebar from '../components/sidebar'
+import Sidebar from './sidebar'
 
 function Login({ addData }) {
   const [loginForm, setLoginForm] = useState({

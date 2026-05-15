@@ -1,5 +1,29 @@
 {
   "users": [
+    {
+      "username": "Faithcloud",
+      "password": "wrjieokdslsmf38wi",
+      "email": "faith.kamande1@student.moringaschool.com",
+      "id": "8G6QUdDJpXM"
+    },
+    {
+      "username": "AllanKivuva",
+      "password": "ewijw2p[wa",
+      "email": "Allankivuva@gmail.com",
+      "id": "lRJfdcZx-ds"
+    },
+    {
+      "username": "Cosmas",
+      "password": "mr3qhiews",
+      "email": "CosmasM@gmail.com",
+      "id": "IPp2HXD968k"
+    },
+    {
+      "username": "RyanMakori",
+      "password": "lwiewokslasiq",
+      "email": "Ryan@student.moringaschool.com",
+      "id": "YepvizOENq4"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
