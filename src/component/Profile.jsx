@@ -33,7 +33,7 @@ function Profile() {
    USER PROFILE
       </h2>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex justify-">
         {profile.map(user => (
           <div
             key={user.id}

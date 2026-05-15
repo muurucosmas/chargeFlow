@@ -29,7 +29,7 @@ function Login({ addData }) {
       })
 
       addData() // refresh list
-
+  alert(`you login in successfully${loginForm.username}`)
       setLoginForm({
         username: "",
         password: "",
