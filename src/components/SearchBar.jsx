@@ -24,7 +24,7 @@ export default function SearchBar({ onSelect }) {
     <>
       <div className="flex gap-2 items-center font-smokum width-max">
         <input
-          className="flex-1 px-4 py-2 border rounded outline-none"
+          className="flex-1 px-4 py-2 border rounded outline-none font-display"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search a place (e.g., Westlands Nairobi)"
