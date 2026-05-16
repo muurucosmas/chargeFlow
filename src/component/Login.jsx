@@ -1,0 +1,97 @@
+import React, { useState } from 'react'
+import Sidebar from './sidebar'
+
+function Login({ addData }) {
+  const [loginForm, setLoginForm] = useState({
+    username: "",
+    password: "",
+    email: ""
+  })
+
+  function handleChange(e) {
+    const { name, value } = e.target
+    setLoginForm({
+      ...loginForm,
+      [name]: value
+    })
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    try {
+      await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(loginForm)
+      })
+
+      addData() // refresh list
+  alert(`you login in successfully${loginForm.username}`)
+      setLoginForm({
+        username: "",
+        password: "",
+        email: ""
+      })
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  return (
+    <div className="m-6 flex justify-center items-center">
+
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md space-y-4"
+      >
+
+        <h2 className="text-2xl font-bold text-center">
+          Create User
+        </h2>
+
+        <input
+          type="text"
+          name="username"
+          value={loginForm.username}
+          onChange={handleChange}
+          placeholder="Username"
+          className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+          required
+        />
+
+        <input
+          type="password"
+          name="password"
+          value={loginForm.password}
+          onChange={handleChange}
+          placeholder="Password"
+          className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+        required />
+
+        <input
+          type="email"
+          name="email"
+          value={loginForm.email}
+          onChange={handleChange}
+          placeholder="Email"
+          className="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+        required />
+
+        <button
+          type="submit"
+          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-700 transition"
+        >
+          Submit
+        </button>
+
+      </form>
+
+    </div>
+  )
+}
+
+export default Login
