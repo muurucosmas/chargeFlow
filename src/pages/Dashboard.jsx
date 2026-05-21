@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import {
   EvCharger,
   Rabbit,
@@ -10,30 +11,26 @@ import {
   CalendarDays,
 } from "lucide-react";
 
-import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 function Dashboard() {
   const navigate = useNavigate();
 
-  const [showAuth, setShowAuth] =
-    useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+  const [authMessage, setAuthMessage] = useState("");
 
-  const [authMessage, setAuthMessage] =
-    useState("");
+  const user = useMemo(() => {
+    try {
+      return JSON.parse(localStorage.getItem("user"));
+    } catch {
+      return null;
+    }
+  }, []);
 
-  let user = null;
-
-  try {
-    user = JSON.parse(
-      localStorage.getItem("user")
-    );
-  } catch {
-    user = null;
-  }
+  const isAuthenticated = !!user;
 
   function requireAuth(action, message) {
-    if (!user) {
+    if (!isAuthenticated) {
       setAuthMessage(message);
       setShowAuth(true);
       return;
@@ -59,22 +56,19 @@ function Dashboard() {
     <div className="flex flex-col min-h-screen bg-gray-100">
 
       {/* NAVBAR */}
-      <div className="sticky top-0 z-50 bg-white shadow-lg">
+      <header className="sticky top-0 z-50 bg-white shadow-lg">
         <div className="mx-auto max-w-[1600px] px-4 py-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-3">
 
-          {/* LOGO */}
           <img
             className="w-28 md:w-40"
-            src="src/Assests/ChargeFlow.png"
-            alt="chargeflow"
+            src="src/assets/ChargeFlow.png"
+            alt="ChargeFlow"
           />
 
-          {/* SIDEBAR */}
           <div className="w-full md:w-auto flex justify-center md:justify-start">
             <Sidebar />
           </div>
 
-          {/* AUTH BUTTONS */}
           <div className="flex gap-2 md:gap-3 flex-wrap justify-center md:justify-end w-full md:w-auto">
 
             {user ? (
@@ -104,33 +98,27 @@ function Dashboard() {
           </div>
 
         </div>
-      </div>
+      </header>
 
       {/* HERO */}
-      <section className="mx-auto max-w-[1600px] px-4 mt-8 md:mt-10 flex-shrink-0">
+      <main className="mx-auto max-w-[1600px] px-4 mt-8 md:mt-10">
 
-        <div className="flex flex-col gap-3 md:gap-4 pb-6">
+        <section className="flex flex-col gap-3 md:gap-4 pb-6">
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Powering your journey,
-            <span className="text-green-500">
-              {" "}
-              sustainably
-            </span>
+            <span className="text-green-500"> sustainably</span>
           </h1>
 
           <p className="text-lg md:text-2xl">
             Find the nearest station:
-            <span className="font-bold text-gray-500">
-              {" "}
-              Charge, Pay, Flow
-            </span>
+            <span className="font-bold text-gray-500"> Charge, Pay, Flow</span>
           </p>
 
-        </div>
+        </section>
 
-        {/* ACTION BUTTONS */}
-        <div className="flex flex-wrap gap-3">
+        {/* ACTIONS */}
+        <section className="flex flex-wrap gap-3">
 
           <button
             onClick={handleFindClick}
@@ -148,34 +136,28 @@ function Dashboard() {
             My Reservations
           </button>
 
-        </div>
+        </section>
 
         {/* STATS */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 mt-10">
+        <section className="flex flex-col lg:flex-row items-center justify-between gap-10 mt-10">
 
           <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
 
             <div className="flex flex-col items-center lg:items-start">
               <EvCharger className="text-green-500" />
-              <h2 className="font-bold text-2xl md:text-3xl">
-                2,450+
-              </h2>
+              <h2 className="font-bold text-2xl md:text-3xl">2,450+</h2>
               <p>Charging Stations</p>
             </div>
 
             <div className="flex flex-col items-center lg:items-start">
               <User className="text-green-500" />
-              <h2 className="font-bold text-2xl md:text-3xl">
-                10k+
-              </h2>
+              <h2 className="font-bold text-2xl md:text-3xl">10k+</h2>
               <p>Users</p>
             </div>
 
             <div className="flex flex-col items-center lg:items-start">
               <Activity className="text-green-500" />
-              <h2 className="font-bold text-2xl md:text-3xl">
-                97%
-              </h2>
+              <h2 className="font-bold text-2xl md:text-3xl">97%</h2>
               <p>Uptime</p>
             </div>
 
@@ -187,34 +169,34 @@ function Dashboard() {
             alt="charging"
           />
 
-        </div>
+        </section>
 
-      </section>
+        {/* FEATURES */}
+        <section className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      {/* FEATURES */}
-      <div className="mx-auto max-w-[1600px] px-4 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="p-6 border rounded-xl shadow">
+            <MapPinSearch className="text-green-500" />
+            <h3>Find Chargers</h3>
+          </div>
 
-        <div className="p-6 border rounded-xl shadow">
-          <MapPinSearch className="text-green-500" />
-          <h3>Find Chargers</h3>
-        </div>
+          <div className="p-6 border rounded-xl shadow">
+            <Rabbit className="text-green-500" />
+            <h3>Fast & Easy</h3>
+          </div>
 
-        <div className="p-6 border rounded-xl shadow">
-          <Rabbit className="text-green-500" />
-          <h3>Fast & Easy</h3>
-        </div>
+          <div className="p-6 border rounded-xl shadow">
+            <Save className="text-green-500" />
+            <h3>Save Money</h3>
+          </div>
 
-        <div className="p-6 border rounded-xl shadow">
-          <Save className="text-green-500" />
-          <h3>Save Money</h3>
-        </div>
+          <div className="p-6 border rounded-xl shadow">
+            <Sprout className="text-green-500" />
+            <h3>Go Green</h3>
+          </div>
 
-        <div className="p-6 border rounded-xl shadow">
-          <Sprout className="text-green-500" />
-          <h3>Go Green</h3>
-        </div>
+        </section>
 
-      </div>
+      </main>
 
       {/* AUTH MODAL */}
       {showAuth && (
@@ -233,27 +215,21 @@ function Dashboard() {
             <div className="flex flex-col gap-3">
 
               <button
-                onClick={() =>
-                  navigate("/login")
-                }
+                onClick={() => navigate("/login")}
                 className="bg-green-500 text-white py-2 rounded-lg"
               >
                 Login
               </button>
 
               <button
-                onClick={() =>
-                  navigate("/signup")
-                }
+                onClick={() => navigate("/signup")}
                 className="border border-green-500 text-green-500 py-2 rounded-lg"
               >
                 Sign Up
               </button>
 
               <button
-                onClick={() =>
-                  setShowAuth(false)
-                }
+                onClick={() => setShowAuth(false)}
                 className="text-gray-500 text-sm"
               >
                 Cancel
@@ -280,7 +256,7 @@ function Dashboard() {
         </div>
 
         <div className="text-center text-sm text-gray-500 mt-6">
-          &copy; {new Date().getFullYear()} ChargeFlow
+          © {new Date().getFullYear()} ChargeFlow
         </div>
 
       </footer>

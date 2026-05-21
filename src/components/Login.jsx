@@ -3,53 +3,53 @@ import { useNavigate } from "react-router-dom";
 import { Mail, Lock, Loader2, ArrowLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 
+const API_URL = "http://localhost:3001/users";
+
 function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   function handleChange(e) {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (loading) return;
+
     setLoading(true);
 
     try {
-      // Fetch user by email
-      const res = await fetch(`http://localhost:3001/users?email=${formData.email}`);
-      if (!res.ok) throw new Error("Failed to fetch user");
+      const res = await fetch(`${API_URL}?email=${formData.email}`);
+      if (!res.ok) throw new Error("Network error");
 
-      const data = await res.json();
-      const user = data[0];
+      const [user] = await res.json();
 
       if (!user) {
-        toast.error("User not found", { duration: 1500 });
-        setLoading(false);
+        toast.error("Account not found");
         return;
       }
 
       if (user.password !== formData.password) {
-        toast.error("Incorrect password", { duration: 1500 });
-        setLoading(false);
+        toast.error("Wrong password");
         return;
       }
 
-      // Save user in localStorage
       localStorage.setItem("user", JSON.stringify(user));
 
-      //  Show success toast with short duration
-      toast.success("Login successful", { duration: 1000 });
+      toast.success("Welcome back 👋");
 
-      //  Redirect after toast duration
-      setTimeout(() => navigate("/profile"), 1000);
+      navigate("/profile");
 
     } catch (err) {
       console.error(err);
-      toast.error("Login failed. Try again.", { duration: 1500 });
+      toast.error("Login failed");
     } finally {
       setLoading(false);
     }
@@ -58,18 +58,16 @@ function Login() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4">
 
-      {/* Back button */}
-      <div className="w-full max-w-md mb-4 flex items-center">
-        <button
-          onClick={() => navigate("/")}
-          className="flex items-center gap-2 text-gray-700 hover:text-green-600"
-        >
-          <ArrowLeft size={20} />
-          <span className="font-medium">Back to Home</span>
-        </button>
-      </div>
+      {/* Back */}
+      <button
+        onClick={() => navigate("/")}
+        className="mb-4 flex items-center gap-2 text-gray-700 hover:text-green-600"
+      >
+        <ArrowLeft size={18} />
+        Back to Home
+      </button>
 
-      {/* Login form */}
+      {/* Form */}
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md space-y-4"
@@ -82,10 +80,10 @@ function Login() {
           <input
             type="email"
             name="email"
-            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full border p-2 pl-10 rounded-md outline-none focus:ring-2 focus:ring-green-400"
+            placeholder="Email"
+            className="w-full border p-2 pl-10 rounded-md focus:ring-2 focus:ring-green-400 outline-none"
             required
           />
         </div>
@@ -96,19 +94,19 @@ function Login() {
           <input
             type="password"
             name="password"
-            placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full border p-2 pl-10 rounded-md outline-none focus:ring-2 focus:ring-green-400"
+            placeholder="Password"
+            className="w-full border p-2 pl-10 rounded-md focus:ring-2 focus:ring-green-400 outline-none"
             required
           />
         </div>
 
-        {/* Submit */}
+        {/* Button */}
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-700 flex items-center justify-center gap-2"
+          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-700 flex items-center justify-center gap-2 disabled:opacity-60"
         >
           {loading ? (
             <>

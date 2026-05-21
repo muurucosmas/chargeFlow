@@ -1,73 +1,58 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
-import {
-  MapPin,
-  CalendarDays,
-} from "lucide-react";
+import { MapPin, CalendarDays } from "lucide-react";
 
 export default function Home() {
   const navigate = useNavigate();
 
-  const [showAuth, setShowAuth] =
-    useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+  const [authMessage, setAuthMessage] = useState("");
 
-  const [authMessage, setAuthMessage] =
-    useState("");
+  const user = useMemo(() => {
+    try {
+      return JSON.parse(localStorage.getItem("user"));
+    } catch {
+      return null;
+    }
+  }, []);
 
-  // Get logged-in user
-  let user = null;
+  const isAuthenticated = !!user;
 
-  try {
-    user = JSON.parse(
-      localStorage.getItem("user")
-    );
-  } catch {
-    user = null;
-  }
-
-  // Generic auth guard
-  function requireAuth(action) {
-    if (!user) {
-      setAuthMessage(
-        "You need an account to access this feature"
-      );
+  function requireAuth(action, message) {
+    if (!isAuthenticated) {
+      setAuthMessage(message);
       setShowAuth(true);
       toast.error("Login required");
-      return false;
+      return;
     }
     action();
-    return true;
   }
 
-  // Find chargers
   function handleFindChargeClick() {
-    requireAuth(() => {
-      navigate("/findcharger");
-    });
+    requireAuth(
+      () => navigate("/findcharger"),
+      "You need an account to access charging stations"
+    );
   }
 
-  // Reservations
   function handleReservationsClick() {
-    requireAuth(() => {
-      navigate("/reservations");
-    });
+    requireAuth(
+      () => navigate("/reservations"),
+      "You need an account to view reservations"
+    );
   }
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-gray-100">
 
-      {/* Toast notifications */}
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-      />
+      <Toaster position="top-right" />
 
       {/* AUTH MODAL */}
       {showAuth && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
 
-          <div className="bg-white p-6 rounded-xl w-96 text-center shadow-xl">
+          <div className="bg-white p-6 rounded-xl w-full max-w-sm text-center shadow-xl">
 
             <h2 className="text-2xl font-bold mb-2">
               Login Required
@@ -80,28 +65,22 @@ export default function Home() {
             <div className="flex flex-col gap-3">
 
               <button
-                onClick={() =>
-                  navigate("/login")
-                }
-                className="bg-green-500 text-white py-2 rounded-lg hover:bg-green-700 flex items-center justify-center gap-2"
+                onClick={() => navigate("/login")}
+                className="bg-green-500 text-white py-2 rounded-lg"
               >
                 Login
               </button>
 
               <button
-                onClick={() =>
-                  navigate("/signup")
-                }
-                className="border border-green-500 text-green-500 py-2 rounded-lg hover:bg-green-100 flex items-center justify-center gap-2"
+                onClick={() => navigate("/signup")}
+                className="border border-green-500 text-green-500 py-2 rounded-lg"
               >
                 Create Account
               </button>
 
               <button
-                onClick={() =>
-                  setShowAuth(false)
-                }
-                className="text-gray-500 text-sm mt-2"
+                onClick={() => setShowAuth(false)}
+                className="text-gray-500 text-sm"
               >
                 Cancel
               </button>
@@ -113,10 +92,9 @@ export default function Home() {
         </div>
       )}
 
-      {/* MAIN CONTENT */}
+      {/* MAIN ACTIONS */}
       <div className="flex flex-col gap-4">
 
-        {/* Find Chargers */}
         <button
           onClick={handleFindChargeClick}
           className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-700 flex items-center gap-2"
@@ -125,7 +103,6 @@ export default function Home() {
           Find Charging Station
         </button>
 
-        {/* Reservations */}
         <button
           onClick={handleReservationsClick}
           className="bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 flex items-center gap-2"
