@@ -17,6 +17,90 @@
       "password": "vik fgtyol. ",
       "email": "ryan.mokari@student.moringaschool.com",
       "id": "inWoErziVFE"
+    },
+    {
+      "username": "brian",
+      "email": "brian.ngoyoni@student.moringaschool.com",
+      "password": "Ngoyoni269",
+      "id": "qGMXfabXyfU"
+    },
+    {
+      "username": "Brian",
+      "email": "brian@gmail.com",
+      "password": "123456",
+      "id": "Ay6xmQNqK3c"
+    },
+    {
+      "username": "Ken",
+      "email": "ken@gmail.com",
+      "password": "12345",
+      "id": "at2el0pQAOk"
+    },
+    {
+      "username": "Dc",
+      "email": "dc@gmail.com",
+      "password": "123456",
+      "id": "dqM2eHDbtPQ"
+    },
+    {
+      "username": "RN",
+      "email": "rn2@gmail.com",
+      "password": "12345",
+      "id": "p84rrSkg5Uo"
+    },
+    {
+      "username": "kelly",
+      "email": "kelly@gmail.com",
+      "password": "123456",
+      "id": "2A4VS5bc-WQ"
+    },
+    {
+      "username": "lin",
+      "email": "lin@gmail.com",
+      "password": "123456",
+      "id": "mc8fOm_jTlk"
+    },
+    {
+      "username": "amu",
+      "email": "amu@gmail.com",
+      "password": "123456",
+      "id": "SbkRQXcHQnA"
+    },
+    {
+      "username": "b",
+      "email": "b@gmail.com",
+      "password": "123456",
+      "id": "6HJKpaM51R0"
+    },
+    {
+      "username": "L",
+      "email": "l@gmail.com",
+      "password": "123456",
+      "id": "dxG_8tU4TVQ"
+    },
+    {
+      "username": "brain",
+      "email": "brain@gmail.com",
+      "password": "123456",
+      "id": "AHwBJdv4e1c"
+    },
+    {
+      "username": "zey",
+      "email": "zey@gmail.com",
+      "password": "123456",
+      "id": "XwEbWRM5SoA"
+    },
+    {
+      "username": "m",
+      "email": "m@gmail.com",
+      "password": "123456",
+      "id": "AQwuWwF4LQc"
+    },
+    {
+      "username": "COS",
+      "email": "cos@gmail.com",
+      "password": "123456",
+      "id": "29oZwYu-w-E"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

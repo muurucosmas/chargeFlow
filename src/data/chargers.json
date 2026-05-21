@@ -1,0 +1,151 @@
+[
+  {
+    "id": 1,
+    "name": "Sarit Centre",
+    "type": "Shopping Mall",
+    "operator": "Public EV charger",
+    "lat": -1.2640,
+    "lng": 36.8035,
+    "notes": "Shared EV chargers, motorbike compatible adapters may be needed",
+    "ports": [
+      { "id": "A1", "type": "CCS2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "A2", "type": "Type2", "power": "11kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "A3", "type": "CCS2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "A4", "type": "Type2", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 2,
+    "name": "Westgate Mall",
+    "type": "Shopping Mall",
+    "operator": "Public EV charger",
+    "lat": -1.2710,
+    "lng": 36.7900,
+    "notes": "Shared EV chargers",
+    "ports": [
+      { "id": "B1", "type": "Fast DC", "power": "50kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "B2", "type": "Type2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "B3", "type": "CCS2", "power": "60kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 3,
+    "name": "Two Rivers Mall",
+    "type": "Shopping Mall",
+    "operator": "Public EV charger",
+    "lat": -1.2030,
+    "lng": 36.8440,
+    "notes": "Car chargers with 2-wheeler adapters",
+    "ports": [
+      { "id": "C1", "type": "CCS2", "power": "150kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "C2", "type": "Type2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "C3", "type": "Fast DC", "power": "50kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "C4", "type": "CCS2", "power": "100kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 4,
+    "name": "The Hub Karen",
+    "type": "Shopping Mall",
+    "operator": "Public EV charger",
+    "lat": -1.3275,
+    "lng": 36.7312,
+    "notes": "Check motorbike compatibility",
+    "ports": [
+      { "id": "D1", "type": "Type2", "power": "11kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "D2", "type": "CCS2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "D3", "type": "Type2", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "NopeaRide Hub - Westlands",
+    "type": "Electric Motorbike Fleet",
+    "operator": "NopeaRide",
+    "lat": -1.2715,
+    "lng": 36.8070,
+    "notes": "Motorbike rental + charging",
+    "ports": [
+      { "id": "E1", "type": "Bike Charger", "power": "5kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "E2", "type": "Bike Charger", "power": "5kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "E3", "type": "Bike Charger", "power": "5kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 6,
+    "name": "Ampersand Charging Hub - Industrial Area",
+    "type": "Electric Motorbike Fleet",
+    "operator": "Ampersand",
+    "lat": -1.3100,
+    "lng": 36.8450,
+    "notes": "Motorbike charging hub",
+    "ports": [
+      { "id": "F1", "type": "Bike Charger", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "F2", "type": "Bike Charger", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "F3", "type": "Bike Charger", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 7,
+    "name": "iHub Nairobi",
+    "type": "Business Park",
+    "operator": "Pilot EV charger",
+    "lat": -1.2833,
+    "lng": 36.8172,
+    "notes": "Mostly employee charging",
+    "ports": [
+      { "id": "G1", "type": "Type2", "power": "11kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "G2", "type": "Type2", "power": "7kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 8,
+    "name": "Shell Service Station - Ngong Road",
+    "type": "Petrol Station",
+    "operator": "Shell",
+    "lat": -1.2921,
+    "lng": 36.7882,
+    "notes": "EV charger available",
+    "ports": [
+      { "id": "H1", "type": "Fast DC", "power": "50kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "H2", "type": "CCS2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "H3", "type": "Type2", "power": "11kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 9,
+    "name": "Total Kenya - Waiyaki Way",
+    "type": "Petrol Station",
+    "operator": "Total",
+    "lat": -1.2525,
+    "lng": 36.7660,
+    "notes": "EV charger; adapters may be required",
+    "ports": [
+      { "id": "I1", "type": "Type2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "I2", "type": "CCS2", "power": "50kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  },
+
+  {
+    "id": 10,
+    "name": "Garden City Mall",
+    "type": "Shopping Mall",
+    "operator": "Public EV charger",
+    "lat": -1.2300,
+    "lng": 36.8630,
+    "notes": "Shared EV chargers",
+    "ports": [
+      { "id": "J1", "type": "CCS2", "power": "50kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "J2", "type": "Type2", "power": "22kW", "status": "available", "reservedBy": null, "reservedAt": null },
+      { "id": "J3", "type": "Fast DC", "power": "60kW", "status": "available", "reservedBy": null, "reservedAt": null }
+    ]
+  }
+]
