@@ -1,0 +1,200 @@
+[ 
+  {
+    "id": 1,
+    "name": "Sarit Centre Charging Station",
+    "city": "Nairobi",
+    "area": "Westlands",
+    "lat": -1.2641,
+    "lng": 36.8046,
+    "type": "AC/DC",
+    "connectors": ["Type 2", "CHAdeMO"],
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Two Rivers Mall Charging Station",
+    "city": "Nairobi",
+    "area": "Gigiri",
+    "lat": -1.2106,
+    "lng": 36.7926,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Village Market Charging Station",
+    "city": "Nairobi",
+    "area": "Gigiri",
+    "lat": -1.2236,
+    "lng": 36.8058,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "Adlife Plaza Charging Station",
+    "city": "Nairobi",
+    "area": "Kilimani",
+    "lat": -1.2921,
+    "lng": 36.7831,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "name": "KCB Towers Charging Station",
+    "city": "Nairobi",
+    "area": "Upper Hill",
+    "lat": -1.3003,
+    "lng": 36.8148,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 6,
+    "name": "Britam Towers Charging Station",
+    "city": "Nairobi",
+    "area": "Upper Hill",
+    "lat": -1.3008,
+    "lng": 36.8126,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 7,
+    "name": "Mövenpick Hotel Charging Station",
+    "city": "Nairobi",
+    "area": "Westlands",
+    "lat": -1.2626,
+    "lng": 36.8016,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 8,
+    "name": "JKIA EV Charging Station",
+    "city": "Nairobi",
+    "area": "Embakasi",
+    "lat": -1.3192,
+    "lng": 36.9278,
+    "type": "DC Fast",
+    "connectors": ["CCS2"],
+    "status": "active"
+  },
+  {
+    "id": 9,
+    "name": "BasiGo Depot Buruburu",
+    "city": "Nairobi",
+    "area": "Buruburu",
+    "lat": -1.2825,
+    "lng": 36.8969,
+    "type": "DC Fast",
+    "connectors": ["CCS2"],
+    "status": "active"
+  },
+  {
+    "id": 10,
+    "name": "BasiGo Depot Embakasi",
+    "city": "Nairobi",
+    "area": "Embakasi",
+    "lat": -1.3275,
+    "lng": 36.8916,
+    "type": "DC Fast",
+    "connectors": ["CCS2"],
+    "status": "active"
+  },
+  {
+    "id": 11,
+    "name": "Westside Mall Charging Station",
+    "city": "Nakuru",
+    "area": "Nakuru Town",
+    "lat": -0.3031,
+    "lng": 36.0800,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 12,
+    "name": "Buffalo Mall Charging Station",
+    "city": "Naivasha",
+    "area": "Naivasha",
+    "lat": -0.7167,
+    "lng": 36.4333,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 13,
+    "name": "Mega City Mall Charging Station",
+    "city": "Kisumu",
+    "area": "Kisumu",
+    "lat": -0.0917,
+    "lng": 34.7680,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 14,
+    "name": "City Mall Nyali Charging Station",
+    "city": "Mombasa",
+    "area": "Nyali",
+    "lat": -4.0435,
+    "lng": 39.6682,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 15,
+    "name": "Trinity Energy Charging Station",
+    "city": "Kiambu",
+    "area": "Kiambu",
+    "lat": -1.1714,
+    "lng": 36.8356,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 16,
+    "name": "Petrocity Mavoko Charging Station",
+    "city": "Machakos",
+    "area": "Mavoko",
+    "lat": -1.4481,
+    "lng": 37.0086,
+    "type": "AC/DC",
+    "connectors": ["Type 2", "CCS2"],
+    "status": "active"
+  },
+  {
+    "id": 17,
+    "name": "Sportsman Arms Charging Station",
+    "city": "Nanyuki",
+    "area": "Nanyuki",
+    "lat": 0.0167,
+    "lng": 37.0728,
+    "type": "AC",
+    "connectors": ["Type 2"],
+    "status": "active"
+  },
+  {
+    "id": 18,
+    "name": "Dallas Lounge Charging Station",
+    "city": "Narok",
+    "area": "Narok Town",
+    "lat": -1.08,
+    "lng": 35.87,
+    "type": "AC",
+    "connectors": ["Type 2", "GBT"],
+    "status": "active"
+  }
+]
